@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="textStr"
+            type="String" />
+
+        <variable
+            name="onePlusOnClick"
+            type="android.view.View.OnClickListener" />
+
+        <variable
+            name="dog"
+            type="com.yifan.mvvmdemo.Dog" />
+
+        <variable
+            name="username"
+            type="androidx.databinding.ObservableField&lt;String>" />
+
+        <variable
+            name="onlyLive"
+            type="String" />
+    </data>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".MainActivity">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{textStr}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="@{onePlusOnClick}"
+            android:text="@{textStr}" />
+
+        <TextView
+            android:id="@+id/tvDogName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dog.dogName}" />
+
+        <TextView
+            android:id="@+id/tvDogColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dog.color}" />
+
+        <Button
+            android:id="@+id/btnName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dog.dogName}" />
+
+        <Button
+            android:id="@+id/btnColor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dog.color}" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{dog.dogName}" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@={dog.dogName}" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{onlyLive}" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</layout>
